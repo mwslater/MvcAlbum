@@ -8,9 +8,10 @@ using MvcAlbum.Data;
 namespace MvcAlbum.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20161118032951_Initial")]
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -123,7 +124,7 @@ namespace MvcAlbum.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MvcAlbum.Models.Album", b =>
+            modelBuilder.Entity("MvcAkbum.Models.Album", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -131,8 +132,6 @@ namespace MvcAlbum.Data.Migrations
                     b.Property<string>("Artist");
 
                     b.Property<string>("Genre");
-
-                    b.Property<string>("Rating");
 
                     b.Property<DateTime>("ReleaseDate");
 
